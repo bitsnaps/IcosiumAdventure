@@ -1,111 +1,153 @@
 <template>
-  <div class="about-container">
-    <h1>About Icosium Adventure</h1>
-    
-    <section class="mission">
-      <h2>Our Mission</h2>
-      <p>Icosium Adventure is dedicated to bringing the rich history and culture of Algeria to life through immersive gaming experiences. We strive to create engaging adventures that educate and entertain while preserving our heritage.</p>
-    </section>
-
-    <section class="story">
-      <h2>Our Story</h2>
-      <p>Founded by passionate developers and historians, Icosium Adventure takes its name from the ancient Phoenician settlement that later became modern-day Algiers. Our team combines cutting-edge technology with historical accuracy to create unique gaming experiences.</p>
-    </section>
-
-    <section class="team">
-      <h2>Our Team</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <h3>Game Developers</h3>
-          <p>Expert programmers crafting interactive experiences</p>
+  <section class="section">
+    <div class="container">
+      <h1 class="title is-2 has-text-centered mb-6" data-aos="fade-down">About Adventure Ecosium</h1>
+      
+      <div class="columns is-vcentered mb-6">
+        <div class="column is-6" data-aos="fade-right">
+          <h2 class="title is-3 mb-4">Our Mission</h2>
+          <p class="subtitle is-5">
+            Adventure Ecosium is dedicated to transforming teams through immersive outdoor experiences. We create engaging adventures that challenge, inspire, and unite teams while fostering lasting professional relationships.
+          </p>
         </div>
-        <div class="team-member">
-          <h3>Historians</h3>
-          <p>Ensuring historical accuracy and authenticity</p>
-        </div>
-        <div class="team-member">
-          <h3>Artists</h3>
-          <p>Creating stunning visuals inspired by Algerian culture</p>
+        <div class="column is-6" data-aos="fade-left">
+          <figure class="image is-16by9">
+            <img src="../assets/mission.jpg" alt="Team building mission" class="has-shadow">
+          </figure>
         </div>
       </div>
-    </section>
 
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions or feedback? Reach out to us at:</p>
-      <a href="mailto:contact@icosiumadventure.com">contact@icosiumadventure.com</a>
-    </section>
-  </div>
+      <div class="columns is-vcentered mb-6 reverse-columns">
+        <div class="column is-6" data-aos="fade-right">
+          <figure class="image is-16by9">
+            <img src="../assets/team.jpg" alt="Team" class="has-shadow">
+          </figure>
+        </div>
+        <div class="column is-6" data-aos="fade-left">
+          <h2 class="title is-3 mb-4">Our Story</h2>
+          <p class="subtitle is-5">
+            Founded by passionate outdoor enthusiasts and team development experts, Adventure Ecosium combines adventure sports with professional development. Our journey began with a simple belief: great teams are built through shared experiences and challenges.
+          </p>
+        </div>
+      </div>
+
+      <div class="team-section mt-6 pt-6">
+        <h2 class="title is-3 has-text-centered mb-6" data-aos="fade-up">Our Team</h2>
+        <div class="columns is-multiline">
+          <div class="column is-4" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large mb-4">
+                  <i class="fas fa-users fa-3x"></i>
+                </span>
+                <h3 class="title is-4">Facilitators</h3>
+                <p class="subtitle is-6">Expert guides leading transformative team experiences</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large mb-4">
+                  <i class="fas fa-mountain fa-3x"></i>
+                </span>
+                <h3 class="title is-4">Adventure Experts</h3>
+                <p class="subtitle is-6">Certified professionals ensuring safe and exciting activities</p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card">
+              <div class="card-content has-text-centered">
+                <span class="icon is-large mb-4">
+                  <i class="fas fa-brain fa-3x"></i>
+                </span>
+                <h3 class="title is-4">Development Coaches</h3>
+                <p class="subtitle is-6">Specialists in team dynamics and leadership growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-section has-text-centered mt-6 pt-6" data-aos="fade-up">
+        <h2 class="title is-3 mb-4">Get in Touch</h2>
+        <p class="subtitle is-5 mb-5">Ready to start your team's adventure? Contact us today!</p>
+        <div class="buttons is-centered">
+          <a href="mailto:contact@adventureecosium.com" class="button is-primary is-medium">
+            <span class="icon">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span>Email Us</span>
+          </a>
+          <a href="tel:+213XXXXXXXXX" class="button is-light is-medium">
+            <span class="icon">
+              <i class="fas fa-phone"></i>
+            </span>
+            <span>Call Us</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
-<script>
-export default {
-  name: 'About',
-}
+<script setup>
+// Component logic here if needed
 </script>
 
 <style scoped>
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-h1 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-section {
-  margin-bottom: 4rem;
-}
-
-h2 {
-  color: #42b983;
-  margin-bottom: 1.5rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.team-member {
-  background: #f8f9fa;
-  padding: 1.5rem;
+.card {
   border-radius: 8px;
-  text-align: center;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
-.team-member h3 {
-  color: #2c3e50;
-  margin-bottom: 1rem;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-.contact {
-  text-align: center;
+.image img {
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.contact a {
-  color: #42b983;
-  text-decoration: none;
-  font-weight: bold;
+.has-shadow {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.contact a:hover {
-  text-decoration: underline;
+.icon.is-large {
+  height: 3rem;
+  width: 3rem;
+  color: #485fc7;
 }
 
-@media (max-width: 768px) {
-  .about-container {
-    padding: 1rem;
+.contact-section {
+  background-color: #f5f5f5;
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+.reverse-columns {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .reverse-columns {
+    flex-direction: column-reverse;
   }
   
-  .team-grid {
-    grid-template-columns: 1fr;
+  .column {
+    padding: 1.5rem;
   }
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
 }
 </style>

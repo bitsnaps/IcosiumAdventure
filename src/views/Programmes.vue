@@ -1,10 +1,10 @@
 <template>
   <section class="section">
     <div class="container">
-      <h1 class="title is-2 has-text-centered mb-6">Our Adventure Programmes</h1>
+      <h1 class="title is-2 has-text-centered mb-6" data-aos="fade-down">Our Adventure Programmes</h1>
 
       <div class="programme-selector">
-        <div class="tabs is-centered">
+        <div class="tabs is-centered" data-aos="fade-up">
           <ul>
             <li :class="{ 'is-active': activeTab === 'standard' }">
               <a @click="activeTab = 'standard'">Standard Package</a>
@@ -21,12 +21,12 @@
         <div class="content-area">
           <!-- Standard Package -->
           <div v-show="activeTab === 'standard'" class="programme-content">
-            <div class="columns">
-              <div class="column is-6">
+            <div class="columns is-vcentered">
+              <div class="column is-6" data-aos="fade-right">
                 <div class="card">
                   <div class="card-content">
-                    <h3 class="title is-4">Standard Package</h3>
-                    <p class="subtitle is-5 has-text-primary">Starting at 2000 DA per person</p>
+                    <h3 class="title is-3">Standard Package</h3>
+                    <p class="subtitle is-5 has-text-primary mb-5">Starting at 2000 DA per person</p>
                     <div class="content">
                       <ul>
                         <li>Full-day team building experience</li>
@@ -37,16 +37,16 @@
                         <li>Certificate of completion</li>
                       </ul>
                     </div>
-                    <router-link to="/booking" class="button is-primary is-fullwidth">Book Now</router-link>
+                    <router-link to="/booking" class="button is-primary is-fullwidth is-medium">Book Now</router-link>
                   </div>
                 </div>
               </div>
-              <div class="column is-6">
-                <figure class="image is-16by9">
+              <div class="column is-6" data-aos="fade-left">
+                <figure class="image is-16by9 mb-5">
                   <img src="../assets/standard-package.jpg" alt="Standard Package Activities">
                 </figure>
-                <div class="mt-4">
-                  <h4 class="title is-5">Daily Schedule</h4>
+                <div class="box">
+                  <h4 class="title is-4 mb-4">Daily Schedule</h4>
                   <div class="timeline">
                     <div class="timeline-item">
                       <div class="timeline-content">
@@ -86,12 +86,12 @@
 
           <!-- Adventure Plus -->
           <div v-show="activeTab === 'adventure'" class="programme-content">
-            <div class="columns">
-              <div class="column is-6">
+            <div class="columns is-vcentered">
+              <div class="column is-6" data-aos="fade-right">
                 <div class="card">
                   <div class="card-content">
-                    <h3 class="title is-4">Adventure Plus</h3>
-                    <p class="subtitle is-5 has-text-primary">Starting at 3500 DA per person</p>
+                    <h3 class="title is-3">Adventure Plus</h3>
+                    <p class="subtitle is-5 has-text-primary mb-5">Starting at 3500 DA per person</p>
                     <div class="content">
                       <ul>
                         <li>All Standard Package features</li>
@@ -102,16 +102,16 @@
                         <li>Exclusive team gear</li>
                       </ul>
                     </div>
-                    <router-link to="/booking" class="button is-primary is-fullwidth">Book Now</router-link>
+                    <router-link to="/booking" class="button is-primary is-fullwidth is-medium">Book Now</router-link>
                   </div>
                 </div>
               </div>
-              <div class="column is-6">
-                <figure class="image is-16by9">
+              <div class="column is-6" data-aos="fade-left">
+                <figure class="image is-16by9 mb-5">
                   <img src="../assets/adventure-plus.jpg" alt="Adventure Plus Activities">
                 </figure>
-                <div class="mt-4">
-                  <h4 class="title is-5">Featured Activities</h4>
+                <div class="box">
+                  <h4 class="title is-4 mb-4">Featured Activities</h4>
                   <div class="tags are-medium">
                     <span class="tag is-primary">Quad Biking</span>
                     <span class="tag is-primary">Rock Climbing</span>
@@ -126,16 +126,16 @@
 
           <!-- Custom Experience -->
           <div v-show="activeTab === 'custom'" class="programme-content">
-            <div class="columns">
-              <div class="column is-6">
+            <div class="columns is-vcentered">
+              <div class="column is-6" data-aos="fade-right">
                 <div class="card">
                   <div class="card-content">
-                    <h3 class="title is-4">Custom Experience</h3>
-                    <p class="subtitle is-5 has-text-primary">Contact for pricing</p>
-                    <div class="content">
-                      <p>Create your perfect team building experience by choosing from our range of activities:</p>
+                    <h3 class="title is-3">Custom Experience</h3>
+                    <p class="subtitle is-5 has-text-primary mb-5">Contact for pricing</p>
+                    <div class="content mb-5">
+                      <p class="mb-4">Create your perfect team building experience by choosing from our range of activities:</p>
                       <div class="field">
-                        <label class="checkbox">
+                        <label class="checkbox is-size-5">
                           <input type="checkbox" v-model="customActivities" value="quad">
                           Quad Bike Adventures
                         </label>
@@ -159,13 +159,16 @@
                         </label>
                       </div>
                     </div>
-                    <router-link to="/booking" class="button is-primary is-fullwidth">Request Quote</router-link>
+                    <router-link to="/booking" class="button is-primary is-fullwidth is-medium">Request Quote</router-link>
                   </div>
                 </div>
               </div>
-              <div class="column is-6">
-                <div class="notification is-info">
-                  <h4 class="title is-5">Why Choose Custom?</h4>
+              <div class="column is-6" data-aos="fade-left">
+                <figure class="image is-16by9 mb-5">
+                  <img src="../assets/custom-experience.jpg" alt="Custom Experience">
+                </figure>
+                <div class="box">
+                  <h4 class="title is-4 mb-4">Why Choose Custom?</h4>
                   <div class="content">
                     <ul>
                       <li>Tailor activities to your team's needs</li>
@@ -226,5 +229,36 @@ const customActivities = ref([])
 .timeline-content .heading {
   font-weight: bold;
   color: #485fc7;
+}
+
+.card, .box {
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.image img {
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+[data-aos] {
+  pointer-events: none;
+}
+
+[data-aos].aos-animate {
+  pointer-events: auto;
+}
+
+.checkbox {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.tags {
+  justify-content: center;
+}
+
+.tag {
+  margin: 0.3rem;
 }
 </style>
