@@ -3,8 +3,10 @@
 
 /* Custom variables */
 :root {
-  --primary-color: #2E7D32;
-  --secondary-color: #FF5722;
+  --primary: #2E7D32; /* Deep green */
+  --secondary: #FF5722; /* Vibrant orange */
+  --family-primary: 'Roboto', sans-serif;
+  --family-secondary: 'Montserrat', sans-serif;
 }
 
 /* Custom styles */
@@ -15,4 +17,15 @@
 
 .has-parallax {
   background-attachment: fixed;
+}
+
+/* Custom responsive helpers */
+@media screen and (max-width: 768px) {
+  .hero-body {
+      padding: 3rem 1.5rem;
+  }
+  
+  .title.is-1 {
+      font-size: 2.5rem;
+  }
 }
