@@ -10,7 +10,7 @@
             <a href="#" class="icon is-medium">
               <i class="fab fa-facebook fa-lg"></i>
             </a>
-            <a href="#" class="icon is-medium">
+            <a href="https://www.instagram.com/adventure_ecosium/" class="icon is-medium">
               <i class="fab fa-instagram fa-lg"></i>
             </a>
             <a href="#" class="icon is-medium">
