@@ -1,0 +1,20 @@
+/* Import Bulma */
+@import 'bulma/bulma';
+
+/* Custom variables */
+:root {
+    --primary: #2E7D32; /* Deep green */
+    --secondary: #FF5722; /* Vibrant orange */
+    --family-primary: 'Roboto', sans-serif;
+    --family-secondary: 'Montserrat', sans-serif;
+}
+
+/* Custom styles */
+.hero.is-fullheight-with-navbar {
+    background-position: center;
+    background-size: cover;
+}
+
+.has-parallax {
+    background-attachment: fixed;
+}
