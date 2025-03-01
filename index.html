@@ -1,13 +1,1020 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IcosiumAdventure</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADVENTURE ECOSIUM - Votre Parcours vers l'Excellence en Équipe</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero-background {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .service-card {
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .activity-item {
+      transition: transform 0.3s ease;
+    }
+    
+    .activity-item:hover {
+      transform: scale(1.03);
+    }
+    
+    .testimonial-card {
+      height: 100%;
+    }
+    
+    .parallax {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    
+    .footer-links a {
+      margin: 0 10px;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #04AA6D, #3273dc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .navbar-item img {
+      max-height: 50px;
+    }
+
+    .is-brown {
+      background-color: #8B5A2B !important;
+      color: white !important;
+    }
+
+    .is-orange-light {
+      background-color: #FFA500 !important;
+      color: white !important;
+    }
+
+    .workshop-card .card-content {
+      min-height: 180px;
+    }
+
+    .has-bg-green {
+      background-color: #04AA6D;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <span class="has-text-weight-bold is-size-4">ADVENTURE <span class="has-text-success">ECOSIUM</span></span>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNavbar">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="mainNavbar" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#about">À propos</a>
+          <a class="navbar-item" href="#services">Ateliers</a>
+          <a class="navbar-item" href="#activities">Activités</a>
+          <a class="navbar-item" href="#pricing">Tarifs</a>
+          <a class="navbar-item" href="#testimonials">Témoignages</a>
+          <div class="navbar-item">
+            <div class="buttons">
+              <a class="button is-success" href="#contact">
+                <strong>Contactez-nous</strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero is-fullheight hero-background">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered">
+          <div class="column is-6">
+            <h1 class="title is-1 has-text-white">
+              Votre Parcours vers l'Excellence en Équipe
+            </h1>
+            <h2 class="subtitle is-4 has-text-white mb-6">
+              Partez au-delà de l'ordinaire – Créez des équipes qui réussissent.
+            </h2>
+            <div class="buttons are-medium">
+              <a href="#services" class="button is-success is-rounded">
+                <span>Découvrir nos ateliers</span>
+                <span class="icon">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
+              <a href="#contact" class="button is-light is-outlined is-rounded">
+                <span>Demander un devis</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <div class="container has-text-centered">
+        <a href="#about" class="has-text-white">
+          <span class="icon is-large">
+            <i class="fas fa-chevron-down fa-lg"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div class="content has-text-centered mb-6">
+            <h2 class="title is-2">À propos d'ADVENTURE ECOSIUM</h2>
+            <div class="block">
+              <span class="is-size-3 gradient-text has-text-weight-bold">Notre mission</span>
+            </div>
+          </div>
+          
+          <div class="columns">
+            <div class="column is-6">
+              <div class="content">
+                <p class="is-size-5">
+                  ADVENTURE ECOSIUM est une startup spécialisée dans l'aventure, le savoir et les expériences de team building uniques dans le domaine du tourisme.
+                </p>
+                <p class="is-size-5">
+                  Nous concevons des programmes personnalisés pour les entreprises, les écoles et les étudiants, favorisant la collaboration, renforçant les équipes et offrant des moments inspirants et unificateurs.
+                </p>
+                <p class="is-size-5">
+                  Notre mission est de fusionner aventure, savoir et team building pour créer des expériences uniques. Nous croyons que l'exploration partagée renforce les liens et favorise la croissance personnelle et professionnelle.
+                </p>
+              </div>
+            </div>
+            <div class="column is-6">
+              <figure class="image is-4by3">
+                <img class="is-rounded" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2684&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Team working together">
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops Section -->
+  <section id="services" class="section has-background-light">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Nos Ateliers Thématiques</h2>
+        <p class="subtitle is-5">Développez le potentiel de votre équipe avec nos ateliers spécialisés</p>
+      </div>
+      
+      <div class="columns is-multiline">
+        <!-- Workshop 1 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-users-cog"></i>
+                </span>
+                <h3 class="title is-4">Leadership</h3>
+                <p class="subtitle is-6">
+                  Développez vos compétences en leadership et inspirez votre équipe vers de nouveaux horizons. Apprenez à guider avec confiance et vision.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 2 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-lightbulb"></i>
+                </span>
+                <h3 class="title is-4">Entrepreneuriat</h3>
+                <p class="subtitle is-6">
+                  Explorez l'esprit entrepreneurial et développez une mentalité innovante. Découvrez comment transformer les idées en projets concrets.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 3 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-hands-helping"></i>
+                </span>
+                <h3 class="title is-4">Travail d'équipe</h3>
+                <p class="subtitle is-6">
+                  Renforcez les liens entre les membres de votre équipe et apprenez à travailler ensemble efficacement pour atteindre des objectifs communs.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 4 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-brain"></i>
+                </span>
+                <h3 class="title is-4">Intelligence collective</h3>
+                <p class="subtitle is-6">
+                  Exploitez la puissance du groupe pour résoudre des problèmes complexes et générer des solutions innovantes grâce à la collaboration.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 5 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-tasks"></i>
+                </span>
+                <h3 class="title is-4">Gestion d'équipe</h3>
+                <p class="subtitle is-6">
+                  Maîtrisez les techniques de gestion d'équipe efficaces et développez les compétences nécessaires pour optimiser la performance collective.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 6 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-palette"></i>
+                </span>
+                <h3 class="title is-4">Intelligence créative</h3>
+                <p class="subtitle is-6">
+                  Stimulez la créativité de votre équipe et apprenez à sortir des sentiers battus pour trouver des solutions novatrices aux défis quotidiens.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 7 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-star"></i>
+                </span>
+                <h3 class="title is-4">KARISMA</h3>
+                <p class="subtitle is-6">
+                  Développez votre charisme personnel et apprenez à inspirer confiance et motivation dans votre environnement professionnel.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+        
+        <!-- Workshop 8 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-smile-beam"></i>
+                </span>
+                <h3 class="title is-4">Happy Work</h3>
+                <p class="subtitle is-6">
+                  Créez un environnement de travail positif et épanouissant qui favorise le bien-être et la productivité de chaque membre de l'équipe.
+                </p>
+              </div>
+            </div>
+            <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section id="activities" class="section">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Nos Activités Team Building</h2>
+        <p class="subtitle is-5">Des expériences uniques pour renforcer la cohésion et la collaboration</p>
+      </div>
+      
+      <div class="columns is-multiline">
+        <div class="column is-6 activity-item">
+          <div class="box">
+            <div class="columns is-vcentered">
+              <div class="column is-3">
+                <span class="icon is-large">
+                  <i class="fas fa-running fa-3x has-text-success"></i>
+                </span>
+              </div>
+              <div class="column">
+                <h3 class="title is-4">Défis sportifs</h3>
+                <p>Tir à la corde, tir à flèche, football et basketball aveugle, parcours d'obstacles et défis collectifs guidés par des professionnels passionnés.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-6 activity-item">
+          <div class="box">
+            <div class="columns is-vcentered">
+              <div class="column is-3">
+                <span class="icon is-large">
+                  <i class="fas fa-hands fa-3x has-text-success"></i>
+                </span>
+              </div>
+              <div class="column">
+                <h3 class="title is-4">Ateliers créatifs</h3>
+                <p>Création d'objets et construction collective pour libérer l'imagination et encourager la créativité dans un espace inspirant.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-6 activity-item">
+          <div class="box">
+            <div class="columns is-vcentered">
+              <div class="column is-3">
+                <span class="icon is-large">
+                  <i class="fas fa-spa fa-3x has-text-success"></i>
+                </span>
+              </div>
+              <div class="column">
+                <h3 class="title is-4">Méditation en plein air</h3>
+                <p>Une session de méditation inspirante où vous entrez en contact avec la nature, plongeant profondément dans vos pensées.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-6 activity-item">
+          <div class="box">
+            <div class="columns is-vcentered">
+              <div class="column is-3">
+                <span class="icon is-large">
+                  <i class="fas fa-motorcycle fa-3x has-text-success"></i>
+                </span>
+              </div>
+              <div class="column">
+                <h3 class="title is-4">Balade en quad</h3>
+                <p>Une expérience immersive en pleine nature, parcourant les sentiers de la ferme pour vous plonger dans la beauté de l'environnement naturel.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="has-text-centered mt-6">
+        <a class="button is-success is-medium is-rounded">
+          <span>Découvrir toutes nos activités</span>
+          <span class="icon">
+            <i class="fas fa-arrow-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Section -->
+  <section class="section has-background-success-light">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Notre Programme Typique</h2>
+        <p class="subtitle is-5">Une journée complète d'activités pour renforcer votre équipe</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="columns is-multiline">
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">8h30 - 9h00</h3>
+              <h4 class="subtitle is-5">Accueil des Participants</h4>
+              <p>Accueil chaleureux des participants à la ferme. Jeu brise-glace pour favoriser la convivialité et briser les barrières.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">9h00 - 9h45</h3>
+              <h4 class="subtitle is-5">Randonnée Découverte</h4>
+              <p>Une randonnée de 45 minutes pour permettre aux participants de découvrir les merveilles de la ferme et d'apprécier la nature.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">9h45 - 10h30</h3>
+              <h4 class="subtitle is-5">Présentation du Programme</h4>
+              <p>Rassemblement de tous les participants, présentation du programme de la journée et formation des équipes.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">10h30 - 12h00</h3>
+              <h4 class="subtitle is-5">Défis d'Équipe</h4>
+              <p>Défis variés : tir à la corde, tir à flèche, football aveugle et autres jeux d'équipe pour promouvoir la cohésion.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">12h00 - 13h30</h3>
+              <h4 class="subtitle is-5">Déjeuner en plein air</h4>
+              <p>Profitez d'un moment convivial autour d'un déjeuner en plein air, préparé par un traiteur de qualité.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">13h30 - 15h30</h3>
+              <h4 class="subtitle is-5">Workshop</h4>
+              <p>Un atelier créatif où les participants peuvent créer des objets ensemble, renforçant leur créativité et leur esprit d'équipe.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">15h30 - 16h30</h3>
+              <h4 class="subtitle is-5">Session de Communication et Leadership</h4>
+              <p>Une session dédiée à l'amélioration des compétences en communication et en leadership avec des exercices pratiques.</p>
+            </div>
+          </div>
+          
+          <div class="column is-6">
+            <div class="box">
+              <h3 class="title is-4 has-text-success">16h30 - 17h00</h3>
+              <h4 class="subtitle is-5">Fin de Journée et Débriefing</h4>
+              <p>Conclusion de la journée avec un rappel des moments forts et partage des expériences et réflexions des participants.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Nos Tarifs</h2>
+        <p class="subtitle is-5">Des formules adaptées à vos besoins et à votre budget</p>
+      </div>
+      
+      <div class="columns is-variable is-8">
+        <div class="column is-4">
+          <div class="card service-card">
+            <div class="card-header has-bg-green">
+              <p class="card-header-title is-centered">
+                Programme Standard
+              </p>
+            </div>
+            <div class="card-content has-text-centered">
+              <p class="title is-1">2000 DA</p>
+              <p class="subtitle">Par personne</p>
+              <div class="content">
+                <ul class="has-text-left">
+                  <li>Randonnée exploratoire</li>
+                  <li>Défis d'équipe</li>
+                  <li>Méditation en plein air</li>
+                  <li>Accès aux installations</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a class="card-footer-item button is-success is-light is-fullwidth">
+                Demander un devis
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-4">
+          <div class="card service-card">
+            <div class="card-header is-brown">
+              <p class="card-header-title is-centered">
+                Activité Quad
+              </p>
+            </div>
+            <div class="card-content has-text-centered">
+              <div class="field">
+                <div class="control">
+                  <div class="select is-success">
+                    <select id="quadDuration">
+                      <option value="2000">15 minutes - 2000 DA</option>
+                      <option value="2500">30 minutes - 2500 DA</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <p class="subtitle">Par personne</p>
+              <div class="content">
+                <ul class="has-text-left">
+                  <li>Balade guidée en quad</li>
+                  <li>Équipement de sécurité fourni</li>
+                  <li>Formation initiale incluse</li>
+                  <li>Parcours adapté à tous niveaux</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a class="card-footer-item button is-brown is-fullwidth">
+                Réserver cette activité
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-4">
+          <div class="card service-card">
+            <div class="card-header is-orange-light">
+              <p class="card-header-title is-centered">
+                Ateliers Thématiques
+              </p>
+            </div>
+            <div class="card-content has-text-centered">
+              <p class="title is-1">1000 DA</p>
+              <p class="subtitle">Par personne</p>
+              <div class="content">
+                <ul class="has-text-left">
+                  <li>10+ thématiques disponibles</li>
+                  <li>Leadership, entrepreneuriat</li>
+                  <li>Travail d'équipe, intelligence collective</li>
+                  <li>Animation par des experts</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-footer">
+              <a class="card-footer-item button is-warning is-fullwidth">
+                Choisir un atelier
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="has-text-centered mt-6">
+        <p class="is-size-5 mb-4">Services complémentaires</p>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="box has-background-success-light">
+              <div class="columns is-vcentered">
+                <div class="column">
+                  <h4 class="title is-5">Service de restauration</h4>
+                  <p>Déjeuner complet + pause café avec gâteaux et boissons</p>
+                </div>
+                <div class="column is-narrow">
+                  <p class="title is-4 has-text-success">1200 DA / personne</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section parallax">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2 has-text-white">Ce que nos clients disent</h2>
+        <p class="subtitle is-5 has-text-white">Découvrez les expériences vécues par nos participants</p>
+      </div>
+      
+      <div class="columns is-multiline">
+        <div class="column is-4">
+          <div class="card testimonial-card">
+            <div class="card-content">
+              <div class="content">
+                <p>
+                  "Une expérience inoubliable qui a transformé notre équipe. Les défis nous ont permis de découvrir des qualités que nous ne soupçonnions pas chez nos collègues."
+                </p>
+                <p class="has-text-right">
+                  <strong>Sarah M.</strong><br>
+                  <small>Directrice Marketing</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-4">
+          <div class="card testimonial-card">
+            <div class="card-content">
+              <div class="content">
+                <p>
+                  "Les ateliers sur le leadership ont été une révélation pour notre équipe de direction. Nous avons appliqué ces principes dès notre retour au bureau avec des résultats immédiats."
+                </p>
+                <p class="has-text-right">
+                  <strong>Mohamed K.</strong><br>
+                  <small>PDG, Tech Innovations</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-4">
+          <div class="card testimonial-card">
+            <div class="card-content">
+              <div class="content">
+                <p>
+                  "Nous cherchions une façon originale de souder notre nouvelle équipe, et ADVENTURE ECOSIUM a dépassé toutes nos attentes. L'environnement naturel a créé un cadre idéal pour renforcer nos liens."
+                </p>
+                <p class="has-text-right">
+                  <strong>Amina B.</strong><br>
+                  <small>Responsable RH</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="has-text-centered mt-6">
+        <a class="button is-white is-outlined is-medium is-rounded">
+          <span>Voir plus de témoignages</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section">
+    <div class="container">
+      <div class="box has-background-success has-text-white">
+        <div class="columns is-vcentered">
+          <div class="column is-7">
+            <h3 class="title is-3 has-text-white">Prêt à transformer votre équipe ?</h3>
+            <p class="is-size-5">
+              Réservez dès maintenant votre journée de team building et offrez à votre équipe une expérience mémorable qui renforcera la cohésion et la performance.
+            </p>
+          </div>
+          <div class="column">
+            <div class="buttons is-centered">
+              <a class="button is-white is-medium is-rounded">
+                <span>Demander un devis personnalisé</span>
+                <span class="icon">
+                  <i class="fas fa-arrow-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Contactez-nous</h2>
+        <p class="subtitle is-5">Nous sommes à votre disposition pour répondre à toutes vos questions</p>
+      </div>
+      
+      <div class="columns">
+        <div class="column is-5">
+          <div class="content">
+            <h3 class="title is-4">Informations de contact</h3>
+            <p>
+              <span class="icon has-text-success">
+                <i class="fas fa-phone"></i>
+              </span>
+              0666.65.53.86
+            </p>
+            <p>
+              <span class="icon has-text-success">
+                <i class="fas fa-envelope"></i>
+              </span>
+              contact.ecosium@gmail.com
+            </p>
+            <p>
+              <span class="icon has-text-success">
+                <i class="fas fa-map-marker-alt"></i>
+              </span>
+              Ferme ADVENTURE ECOSIUM, Alger
+            </p>
+            
+            <div class="mt-5">
+              <h4 class="title is-5">Suivez-nous</h4>
+              <div class="buttons">
+                <a class="button is-success is-outlined is-rounded">
+                  <span class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                  </span>
+                </a>
+                <a class="button is-success is-outlined is-rounded">
+                  <span class="icon">
+                    <i class="fab fa-instagram"></i>
+                  </span>
+                </a>
+                <a class="button is-success is-outlined is-rounded">
+                  <span class="icon">
+                    <i class="fab fa-linkedin-in"></i>
+                  </span>
+                </a>
+                <a class="button is-success is-outlined is-rounded">
+                  <span class="icon">
+                    <i class="fab fa-twitter"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-7">
+          <div class="box">
+            <h3 class="title is-4">Envoyez-nous un message</h3>
+            <form>
+              <div class="field">
+                <label class="label">Nom</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Votre nom">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                  <input class="input" type="email" placeholder="Votre email">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Téléphone</label>
+                <div class="control">
+                  <input class="input" type="tel" placeholder="Votre numéro de téléphone">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Entreprise</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="Nom de votre entreprise">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                  <textarea class="textarea" placeholder="Votre message"></textarea>
+                </div>
+              </div>
+              
+              <div class="field">
+                <div class="control">
+                  <button class="button is-success is-medium is-fullwidth">Envoyer</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section has-background-light">
+    <div class="container">
+      <div class="has-text-centered mb-6">
+        <h2 class="title is-2">Questions fréquemment posées</h2>
+        <p class="subtitle is-5">Trouvez les réponses à vos interrogations</p>
+      </div>
+      
+      <div class="columns is-multiline">
+        <div class="column is-6">
+          <div class="box">
+            <h4 class="title is-5 has-text-success">Quelle est la taille minimale d'un groupe ?</h4>
+            <p>
+              Nous accueillons des groupes à partir de 10 personnes. Pour des groupes plus petits, veuillez nous contacter directement pour discuter des options disponibles.
+            </p>
+          </div>
+        </div>
+        
+        <div class="column is-6">
+          <div class="box">
+            <h4 class="title is-5 has-text-success">Comment personnaliser notre programme ?</h4>
+            <p>
+              Nous organisons une réunion préalable (en personne ou via Zoom/Google Meet) pour comprendre vos besoins spécifiques et adapter le programme en conséquence.
+            </p>
+          </div>
+        </div>
+        
+        <div class="column is-6">
+          <div class="box">
+            <h4 class="title is-5 has-text-success">Quels sont les modalités de paiement ?</h4>
+            <p>
+              Un acompte de 30% du montant total est requis lors de la réservation. Le solde peut être réglé le jour de l'événement ou par virement bancaire préalable.
+            </p>
+          </div>
+        </div>
+        
+        <div class="column is-6">
+          <div class="box">
+            <h4 class="title is-5 has-text-success">Que se passe-t-il en cas de mauvais temps ?</h4>
+            <p>
+              Nous disposons d'espaces couverts pour la plupart des activités. En cas de conditions météorologiques extrêmes, nous pouvons reporter l'événement à une date ultérieure.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer has-background-dark">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-4">
+          <h3 class="title is-4 has-text-white">ADVENTURE ECOSIUM</h3>
+          <p class="has-text-grey-light">
+            Votre partenaire de confiance pour les expériences de team building mémorables et transformatrices.
+          </p>
+          <div class="buttons mt-4">
+            <a class="button is-small is-light is-outlined is-rounded">
+              <span class="icon">
+                <i class="fab fa-facebook-f"></i>
+              </span>
+            </a>
+            <a class="button is-small is-light is-outlined is-rounded">
+              <span class="icon">
+                <i class="fab fa-instagram"></i>
+              </span>
+            </a>
+            <a class="button is-small is-light is-outlined is-rounded">
+              <span class="icon">
+                <i class="fab fa-linkedin-in"></i>
+              </span>
+            </a>
+            <a class="button is-small is-light is-outlined is-rounded">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+        
+        <div class="column is-2">
+          <h4 class="title is-5 has-text-white">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="has-text-grey-light">Accueil</a></li>
+            <li><a href="#about" class="has-text-grey-light">À propos</a></li>
+            <li><a href="#services" class="has-text-grey-light">Ateliers</a></li>
+            <li><a href="#activities" class="has-text-grey-light">Activités</a></li>
+            <li><a href="#pricing" class="has-text-grey-light">Tarifs</a></li>
+            <li><a href="#contact" class="has-text-grey-light">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="column is-3">
+          <h4 class="title is-5 has-text-white">Ateliers</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="has-text-grey-light">Leadership</a></li>
+            <li><a href="#" class="has-text-grey-light">Entrepreneuriat</a></li>
+            <li><a href="#" class="has-text-grey-light">Travail d'équipe</a></li>
+            <li><a href="#" class="has-text-grey-light">Intelligence collective</a></li>
+            <li><a href="#" class="has-text-grey-light">Gestion d'équipe</a></li>
+          </ul>
+        </div>
+        
+        <div class="column is-3">
+          <h4 class="title is-5 has-text-white">Contact</h4>
+          <p class="has-text-grey-light">
+            <span class="icon has-text-success">
+              <i class="fas fa-phone"></i>
+            </span>
+            0666.65.53.86
+          </p>
+          <p class="has-text-grey-light">
+            <span class="icon has-text-success">
+              <i class="fas fa-envelope"></i>
+            </span>
+            contact.ecosium@gmail.com
+          </p>
+          <p class="has-text-grey-light">
+            <span class="icon has-text-success">
+              <i class="fas fa-map-marker-alt"></i>
+            </span>
+            Ferme ADVENTURE ECOSIUM, Alger
+          </p>
+        </div>
+      </div>
+      
+      <hr class="has-background-grey-dark">
+      
+      <div class="columns">
+        <div class="column has-text-centered has-text-grey-light">
+          <p>© 2025 ADVENTURE ECOSIUM. Tous droits réservés.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+</body>
 </html>
