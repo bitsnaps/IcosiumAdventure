@@ -544,12 +544,13 @@
           <div class="card service-card">
             <div class="card-header has-bg-green">
               <p class="card-header-title is-centered">
-                Programme Standard
+                Programme Entreprise
               </p>
             </div>
             <div class="card-content has-text-centered">
               <p class="title is-1">2000 DA</p>
               <p class="subtitle">Par personne</p>
+              <p class="is-size-7 mb-4">Prix hors taxes (HT)</p>
               <div class="content">
                 <ul class="has-text-left">
                   <li>Randonnée exploratoire</li>
@@ -583,33 +584,47 @@
               </div>
               
               <div class="field">
+                <label class="label">Type de client</label>
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="clientType" id="clientEnterprise" value="enterprise" checked>
+                    Entreprise
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="clientType" id="clientStudent" value="student">
+                    Étudiant (-20%)
+                  </label>
+                </div>
+              </div>
+              
+              <div class="field">
                 <label class="label">Services</label>
                 <div class="control">
                   <label class="checkbox">
                     <input type="checkbox" id="serviceFormation" value="1500">
-                    Formation (+1500 DA/pers)
+                    Formation (<span class="enterprise-price">+1500</span><span class="student-price" style="display:none">+1200</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
                     <input type="checkbox" id="serviceCoaching" value="1200">
-                    Coaching (+1200 DA/pers)
+                    Coaching (<span class="enterprise-price">+1200</span><span class="student-price" style="display:none">+960</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
                     <input type="checkbox" id="serviceTeamBuilding" value="2000" checked>
-                    Team Building (+2000 DA/pers)
+                    Team Building (<span class="enterprise-price">+2000</span><span class="student-price" style="display:none">+1600</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
                     <input type="checkbox" id="serviceBrainstorming" value="800">
-                    Brainstorming (+800 DA/pers)
+                    Brainstorming (<span class="enterprise-price">+800</span><span class="student-price" style="display:none">+640</span> DA/pers)
                   </label>
                 </div>
               </div>
-              
+
               <div class="field">
                 <label class="label">Ateliers</label>
                 <div class="control">
@@ -634,8 +649,10 @@
               <div class="notification is-success is-light mt-4">
                 <p class="title is-4">Prix Total: <span id="totalPrice">2000</span> DA</p>
                 <p class="subtitle is-6">Par personne</p>
+                <p class="is-size-7" id="taxNotice">Prix hors taxes (HT)</p>
                 <p>Total pour <span id="totalParticipants">10</span> personnes: <span id="grandTotal">20000</span> DA</p>
               </div>
+
             </div>
             <div class="card-footer">
               <a class="card-footer-item button is-brown is-fullwidth" id="calculateBtn">
@@ -649,24 +666,25 @@
           <div class="card service-card">
             <div class="card-header is-orange-light">
               <p class="card-header-title is-centered">
-                Ateliers Thématiques
+                Programme Étudiant
               </p>
             </div>
             <div class="card-content has-text-centered">
-              <p class="title is-1">1000 DA</p>
+              <p class="title is-1">1600 DA</p>
               <p class="subtitle">Par personne</p>
               <div class="content">
                 <ul class="has-text-left">
-                  <li>10+ thématiques disponibles</li>
-                  <li>Leadership, entrepreneuriat</li>
-                  <li>Travail d'équipe, intelligence collective</li>
-                  <li>Animation par des experts</li>
+                  <li>Randonnée exploratoire</li>
+                  <li>Défis d'équipe</li>
+                  <li>Méditation en plein air</li>
+                  <li>Accès aux installations</li>
+                  <li>Réduction de 20% sur tous les services</li>
                 </ul>
               </div>
             </div>
             <div class="card-footer">
               <a class="card-footer-item button is-warning is-fullwidth">
-                Choisir un atelier
+                Demander un devis
               </a>
             </div>
           </div>
@@ -1065,41 +1083,53 @@
       const calculatePrice = () => {
         const participantCount = parseInt(document.getElementById('participantCount').value) || 10;
         let pricePerPerson = 0;
+        const isStudent = document.getElementById('clientStudent').checked;
+        const discount = isStudent ? 0.8 : 1; // 20% discount for students
+        
+        // Update price display based on client type
+        document.querySelectorAll('.enterprise-price').forEach(el => {
+          el.style.display = isStudent ? 'none' : 'inline';
+        });
+        document.querySelectorAll('.student-price').forEach(el => {
+          el.style.display = isStudent ? 'inline' : 'none';
+        });
+        document.getElementById('taxNotice').style.display = isStudent ? 'none' : 'block';
         
         // Add service prices
         if (document.getElementById('serviceFormation').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceFormation').value);
+          pricePerPerson += parseInt(document.getElementById('serviceFormation').value) * discount;
         }
         if (document.getElementById('serviceCoaching').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceCoaching').value);
+          pricePerPerson += parseInt(document.getElementById('serviceCoaching').value) * discount;
         }
         if (document.getElementById('serviceTeamBuilding').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceTeamBuilding').value);
+          pricePerPerson += parseInt(document.getElementById('serviceTeamBuilding').value) * discount;
         }
         if (document.getElementById('serviceBrainstorming').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceBrainstorming').value);
+          pricePerPerson += parseInt(document.getElementById('serviceBrainstorming').value) * discount;
         }
         
         // Add workshop prices
         const selectedWorkshops = document.getElementById('workshopsSelect').selectedOptions;
         for (let i = 0; i < selectedWorkshops.length; i++) {
-          pricePerPerson += parseInt(selectedWorkshops[i].value);
+          pricePerPerson += parseInt(selectedWorkshops[i].value) * discount;
         }
         
         // Add restaurant service if selected
         if (document.getElementById('serviceRestaurant').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceRestaurant').value);
+          pricePerPerson += parseInt(document.getElementById('serviceRestaurant').value) * discount;
         }
         
         // Update the displayed prices
-        document.getElementById('totalPrice').textContent = pricePerPerson;
+        document.getElementById('totalPrice').textContent = Math.round(pricePerPerson);
         document.getElementById('totalParticipants').textContent = participantCount;
-        document.getElementById('grandTotal').textContent = pricePerPerson * participantCount;
+        document.getElementById('grandTotal').textContent = Math.round(pricePerPerson * participantCount);
       };
-      
-      // Add event listeners for price calculation
+            // Add event listeners for price calculation
       document.getElementById('calculateBtn').addEventListener('click', calculatePrice);
-      
+      document.getElementById('clientEnterprise').addEventListener('change', calculatePrice);
+      document.getElementById('clientStudent').addEventListener('change', calculatePrice);
+
       // Also calculate when inputs change
       const priceInputs = [
         'participantCount', 'serviceFormation', 'serviceCoaching', 
@@ -1107,7 +1137,14 @@
       ];
       
       priceInputs.forEach(inputId => {
-        document.getElementById(inputId).addEventListener('change', calculatePrice);
+
+        var inputEl = document.getElementById(inputId);
+        if (inputEl){
+          inputEl.addEventListener('change', calculatePrice);
+        } else {
+          console.error(`Element ${inputId} not found!`);          
+        }
+
       });
       
       // Initial calculation
