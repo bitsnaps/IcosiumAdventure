@@ -171,14 +171,17 @@
             <div class="column is-6">
               <div class="content">
                 <p class="is-size-5">
-                  ADVENTURE ECOSIUM est une startup spécialisée dans l'aventure, le savoir et les expériences de team building uniques dans le domaine du tourisme.
+                  ADVENTURE ECOSIUM propose des team building sur mesure, adaptés à vos besoins et objectifs qui limitent l'impact ENVIRONNEMENTALE.
                 </p>
                 <p class="is-size-5">
-                  Nous concevons des programmes personnalisés pour les entreprises, les écoles et les étudiants, favorisant la collaboration, renforçant les équipes et offrant des moments inspirants et unificateurs.
+                  Nous proposons également différentes options de services:
                 </p>
-                <p class="is-size-5">
-                  Notre mission est de fusionner aventure, savoir et team building pour créer des expériences uniques. Nous croyons que l'exploration partagée renforce les liens et favorise la croissance personnelle et professionnelle.
-                </p>
+                <ul class="is-size-5">
+                  <li>Formation</li>
+                  <li>Coaching</li>
+                  <li>Team Building</li>
+                  <li>Brainstorming</li>
+                </ul>
               </div>
             </div>
             <div class="column is-6">
@@ -421,7 +424,7 @@
           </div>
         </div>
         
-        <div class="column is-6 activity-item">
+        <!-- <div class="column is-6 activity-item">
           <div class="box">
             <div class="columns is-vcentered">
               <div class="column is-3">
@@ -435,7 +438,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+        
       </div>
       
       <div class="has-text-centered mt-6">
@@ -567,33 +571,75 @@
           <div class="card service-card">
             <div class="card-header is-brown">
               <p class="card-header-title is-centered">
-                Activité Quad
+                Calculateur de Prix
               </p>
             </div>
             <div class="card-content has-text-centered">
               <div class="field">
+                <label class="label">Nombre de participants</label>
                 <div class="control">
-                  <div class="select is-success">
-                    <select id="quadDuration">
-                      <option value="2000">15 minutes - 2000 DA</option>
-                      <option value="2500">30 minutes - 2500 DA</option>
+                  <input class="input" type="number" id="participantCount" min="10" value="10">
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Services</label>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" id="serviceFormation" value="1500">
+                    Formation (+1500 DA/pers)
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" id="serviceCoaching" value="1200">
+                    Coaching (+1200 DA/pers)
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" id="serviceTeamBuilding" value="2000" checked>
+                    Team Building (+2000 DA/pers)
+                  </label>
+                </div>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" id="serviceBrainstorming" value="800">
+                    Brainstorming (+800 DA/pers)
+                  </label>
+                </div>
+              </div>
+              
+              <div class="field">
+                <label class="label">Ateliers</label>
+                <div class="control">
+                  <div class="select is-multiple is-fullwidth">
+                    <select id="workshopsSelect" multiple size="4">
+                      <option value="1000">Leadership (+1000 DA/pers)</option>
+                      <option value="1000">Entrepreneuriat (+1000 DA/pers)</option>
+                      <option value="1000">Travail d'équipe (+1000 DA/pers)</option>
+                      <option value="1000">Intelligence collective (+1000 DA/pers)</option>
                     </select>
                   </div>
                 </div>
               </div>
-              <p class="subtitle">Par personne</p>
-              <div class="content">
-                <ul class="has-text-left">
-                  <li>Balade guidée en quad</li>
-                  <li>Équipement de sécurité fourni</li>
-                  <li>Formation initiale incluse</li>
-                  <li>Parcours adapté à tous niveaux</li>
-                </ul>
+              
+              <div class="field">
+                <label class="checkbox">
+                  <input type="checkbox" id="serviceRestaurant" value="1200">
+                  Service de restauration (+1200 DA/pers)
+                </label>
+              </div>
+              
+              <div class="notification is-success is-light mt-4">
+                <p class="title is-4">Prix Total: <span id="totalPrice">2000</span> DA</p>
+                <p class="subtitle is-6">Par personne</p>
+                <p>Total pour <span id="totalParticipants">10</span> personnes: <span id="grandTotal">20000</span> DA</p>
               </div>
             </div>
             <div class="card-footer">
-              <a class="card-footer-item button is-brown is-fullwidth">
-                Réserver cette activité
+              <a class="card-footer-item button is-brown is-fullwidth" id="calculateBtn">
+                Calculer le prix
               </a>
             </div>
           </div>
@@ -1014,6 +1060,58 @@
           });
         });
       });
+      
+      // Pricing calculator
+      const calculatePrice = () => {
+        const participantCount = parseInt(document.getElementById('participantCount').value) || 10;
+        let pricePerPerson = 0;
+        
+        // Add service prices
+        if (document.getElementById('serviceFormation').checked) {
+          pricePerPerson += parseInt(document.getElementById('serviceFormation').value);
+        }
+        if (document.getElementById('serviceCoaching').checked) {
+          pricePerPerson += parseInt(document.getElementById('serviceCoaching').value);
+        }
+        if (document.getElementById('serviceTeamBuilding').checked) {
+          pricePerPerson += parseInt(document.getElementById('serviceTeamBuilding').value);
+        }
+        if (document.getElementById('serviceBrainstorming').checked) {
+          pricePerPerson += parseInt(document.getElementById('serviceBrainstorming').value);
+        }
+        
+        // Add workshop prices
+        const selectedWorkshops = document.getElementById('workshopsSelect').selectedOptions;
+        for (let i = 0; i < selectedWorkshops.length; i++) {
+          pricePerPerson += parseInt(selectedWorkshops[i].value);
+        }
+        
+        // Add restaurant service if selected
+        if (document.getElementById('serviceRestaurant').checked) {
+          pricePerPerson += parseInt(document.getElementById('serviceRestaurant').value);
+        }
+        
+        // Update the displayed prices
+        document.getElementById('totalPrice').textContent = pricePerPerson;
+        document.getElementById('totalParticipants').textContent = participantCount;
+        document.getElementById('grandTotal').textContent = pricePerPerson * participantCount;
+      };
+      
+      // Add event listeners for price calculation
+      document.getElementById('calculateBtn').addEventListener('click', calculatePrice);
+      
+      // Also calculate when inputs change
+      const priceInputs = [
+        'participantCount', 'serviceFormation', 'serviceCoaching', 
+        'serviceTeamBuilding', 'serviceBrainstorming', 'workshopsSelect', 'serviceRestaurant'
+      ];
+      
+      priceInputs.forEach(inputId => {
+        document.getElementById(inputId).addEventListener('change', calculatePrice);
+      });
+      
+      // Initial calculation
+      calculatePrice();
     });
   </script>
 </body>
