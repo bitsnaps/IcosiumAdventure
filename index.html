@@ -571,7 +571,7 @@
         <div class="column is-4">
           <div class="card service-card">
             <div class="card-header is-brown">
-              <p class="card-header-title is-centered">
+              <p class="card-header-title is-centered has-text-white">
                 Calculateur de Prix
               </p>
             </div>
@@ -601,26 +601,26 @@
                 <label class="label">Services</label>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceFormation" value="1500">
-                    Formation (<span class="enterprise-price">+2000</span><span class="student-price" style="display:none">+1200</span> DA/pers)
+                    <input type="checkbox" id="serviceFormation" value="2000">
+                    Formation (<span class="enterprise-price">+2000</span><span class="student-price" style="display:none">+1600</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceCoaching" value="1200">
-                    Coaching (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+960</span> DA/pers)
+                    <input type="checkbox" id="serviceCoaching" value="3500">
+                    Coaching (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+2800</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceTeamBuilding" value="2000" checked>
-                    Team Building (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+1600</span> DA/pers)
+                    <input type="checkbox" id="serviceTeamBuilding" value="3500" checked>
+                    Team Building (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+2800</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceBrainstorming" value="800">
-                    Brainstorming (<span class="enterprise-price">+1800</span><span class="student-price" style="display:none">+640</span> DA/pers)
+                    <input type="checkbox" id="serviceBrainstorming" value="1800">
+                    Brainstorming (<span class="enterprise-price">+1800</span><span class="student-price" style="display:none">+1400</span> DA/pers)
                   </label>
                 </div>
               </div>
@@ -628,17 +628,34 @@
               <div class="field">
                 <label class="label">Ateliers</label>
                 <div class="control">
-                  <div class="select is-multiple is-fullwidth">
-                    <select id="workshopsSelect" multiple size="4">
-                      <option value="1000">Leadership (+2500 DA/pers)</option>
-                      <option value="2500">Entrepreneuriat (+2500 DA/pers)</option>
-                      <option value="2500">Travail d'équipe (+2500 DA/pers)</option>
-                      <option value="2500">Intelligence collective (+2500 DA/pers)</option>
-                    </select>
+                  <div class="workshop-checkboxes">
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox" id="workshopLeadership" value="2500">
+                        Leadership (<span class="enterprise-price">+2500</span><span class="student-price" style="display:none">+2000</span> DA/pers)
+                      </label>
+                    </div>
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox" id="workshopEntrepreneuriat" value="2500">
+                        Entrepreneuriat (<span class="enterprise-price">+2500</span><span class="student-price" style="display:none">+2000</span> DA/pers)
+                      </label>
+                    </div>
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox" id="workshopTeamwork" value="2500">
+                        Travail d'équipe (<span class="enterprise-price">+2500</span><span class="student-price" style="display:none">+2000</span> DA/pers)
+                      </label>
+                    </div>
+                    <div class="control">
+                      <label class="checkbox">
+                        <input type="checkbox" id="workshopIntelligence" value="2500">
+                        Intelligence collective (<span class="enterprise-price">+2500</span><span class="student-price" style="display:none">+2000</span> DA/pers)
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
-              
               <div class="field">
                 <label class="checkbox">
                   <input type="checkbox" id="serviceRestaurant" value="1200">
@@ -1110,10 +1127,12 @@
         }
         
         // Add workshop prices
-        const selectedWorkshops = document.getElementById('workshopsSelect').selectedOptions;
-        for (let i = 0; i < selectedWorkshops.length; i++) {
-          pricePerPerson += parseInt(selectedWorkshops[i].value) * discount;
-        }
+        const workshopCheckboxes = document.querySelectorAll('.workshop-checkboxes input[type="checkbox"]');
+        workshopCheckboxes.forEach(checkbox => {
+          if (checkbox.checked) {
+            pricePerPerson += parseInt(checkbox.value) * discount;
+          }
+        });
         
         // Add restaurant service if selected
         if (document.getElementById('serviceRestaurant').checked) {
@@ -1133,18 +1152,12 @@
       // Also calculate when inputs change
       const priceInputs = [
         'participantCount', 'serviceFormation', 'serviceCoaching', 
-        'serviceTeamBuilding', 'serviceBrainstorming', 'workshopsSelect', 'serviceRestaurant'
+        'serviceTeamBuilding', 'serviceBrainstorming', 'serviceRestaurant',
+        'workshopLeadership', 'workshopEntrepreneuriat', 'workshopTeamwork', 'workshopIntelligence'
       ];
       
       priceInputs.forEach(inputId => {
-
-        var inputEl = document.getElementById(inputId);
-        if (inputEl){
-          inputEl.addEventListener('change', calculatePrice);
-        } else {
-          console.error(`Element ${inputId} not found!`);          
-        }
-
+        document.getElementById(inputId).addEventListener('change', calculatePrice);
       });
       
       // Initial calculation
