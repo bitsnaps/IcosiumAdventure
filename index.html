@@ -13,6 +13,70 @@
       background-position: center;
     }
     
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .navbar {
+      background-color: #1e1e1e !important;
+    }
+    
+    .dark-mode .navbar-item, 
+    .dark-mode .navbar-link,
+    .dark-mode .navbar-burger {
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .section:not(.parallax) {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .title:not(.has-text-white),
+    .dark-mode .subtitle:not(.has-text-white) {
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .box,
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .has-background-light {
+      background-color: #1e1e1e !important;
+    }
+    
+    .dark-mode .content p,
+    .dark-mode .content li {
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .label {
+      color: #e0e0e0;
+    }
+    
+    .dark-mode .input, 
+    .dark-mode .textarea, 
+    .dark-mode .select select {
+      background-color: #2d2d2d;
+      color: #e0e0e0;
+      border-color: #3d3d3d;
+    }
+    
+    .theme-toggle {
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    
+    .theme-toggle:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    
     .service-card {
       height: 100%;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -105,6 +169,14 @@
           <a class="navbar-item" href="#activities">Activités</a>
           <a class="navbar-item" href="#pricing">Tarifs</a>
           <a class="navbar-item" href="#testimonials">Témoignages</a>
+          <div class="navbar-item">
+            <div class="theme-toggle" id="themeToggle" title="Changer de thème">
+              <span class="icon">
+                <i class="fas fa-moon" id="darkIcon"></i>
+                <i class="fas fa-sun" id="lightIcon" style="display: none;"></i>
+              </span>
+            </div>
+          </div>
           <div class="navbar-item">
             <div class="buttons">
               <a class="button is-success" href="#contact">
@@ -454,7 +526,7 @@
   </section>
 
   <!-- Program Section -->
-  <section class="section has-background-success-light">
+  <section class="section has-background-success">
     <div class="container">
       <div class="has-text-centered mb-6">
         <h2 class="title is-2">Notre Programme Typique</h2>
@@ -712,7 +784,7 @@
         <p class="is-size-5 mb-4">Services complémentaires</p>
         <div class="columns is-centered">
           <div class="column is-8">
-            <div class="box has-background-success-light">
+            <div class="box has-background-success">
               <div class="columns is-vcentered">
                 <div class="column">
                   <h4 class="title is-5">Service de restauration</h4>
@@ -1085,6 +1157,35 @@
         });
       }
       
+      // Theme toggle functionality
+      const themeToggle = document.getElementById('themeToggle');
+      const darkIcon = document.getElementById('darkIcon');
+      const lightIcon = document.getElementById('lightIcon');
+      
+      // Check for saved theme preference only
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        darkIcon.style.display = 'none';
+        lightIcon.style.display = 'inline';
+      }
+      
+      // Toggle theme
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Toggle icons
+        if (document.body.classList.contains('dark-mode')) {
+          darkIcon.style.display = 'none';
+          lightIcon.style.display = 'inline';
+          localStorage.setItem('theme', 'dark');
+        } else {
+          darkIcon.style.display = 'inline';
+          lightIcon.style.display = 'none';
+          localStorage.setItem('theme', 'light');
+        }
+      });
+
       // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -1096,6 +1197,7 @@
         });
       });
       
+
       // Pricing calculator
       const calculatePrice = () => {
         const participantCount = parseInt(document.getElementById('participantCount').value) || 10;
