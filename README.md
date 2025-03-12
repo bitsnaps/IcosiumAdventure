@@ -23,7 +23,7 @@
   - **Hero Section:**  
     Featuring a captivating headline such as “Embark on Your Team Adventure” with a call-to-action (CTA) button like “Discover Our Journeys.”  
   - **Overview Section:**  
-    A brief introduction to ADVENTURE ECOSIUM, its mission, and what sets it apart (e.g., a blend of physical challenges, creative workshops, and leadership sessions).
+    A brief introduction to ECOSIUM EVENT, its mission, and what sets it apart (e.g., a blend of physical challenges, creative workshops, and leadership sessions).
   - **Interactive Map:**  
     A visual timeline or map that users can scroll through or click on to see snippets of various activities (e.g., quad bike rides, team challenges, creative workshops).
   - **Testimonials & Impact:**  
@@ -31,7 +31,7 @@
 
 - **About Us:**  
   - **Our Story:**  
-    A narrative about how the project began, the values it upholds, and what makes team-building an adventure with ADVENTURE ECOSIUM.
+    A narrative about how the project began, the values it upholds, and what makes team-building an adventure with ECOSIUM EVENT.
   - **Meet the Team:**  
     Introduce the facilitators and organizers through professional yet warm profiles.
 
@@ -109,7 +109,7 @@
 ## 1. Project Overview
 
 **Objective:**  
-The website will serve as the digital gateway for ADVENTURE ECOSIUM’s team-building programs, delivering a dynamic, interactive, and immersive experience that showcases the adventure, creativity, and professional development offered. It will target corporate clients, educational institutions, and individual groups interested in unique team-building solutions.
+The website will serve as the digital gateway for ECOSIUM EVENT’s team-building programs, delivering a dynamic, interactive, and immersive experience that showcases the adventure, creativity, and professional development offered. It will target corporate clients, educational institutions, and individual groups interested in unique team-building solutions.
 
 **Key Themes:**  
 - Adventure and teamwork  
@@ -122,7 +122,7 @@ The website will serve as the digital gateway for ADVENTURE ECOSIUM’s team-bui
 ## 2. Scope & Goals
 
 - **Brand Positioning:**  
-  Establish ADVENTURE ECOSIUM as a leader in innovative, experiential team building.  
+  Establish ECOSIUM EVENT as a leader in innovative, experiential team building.  
 - **User Engagement:**  
   Encourage exploration of programmes, view testimonials, and interact with booking features to facilitate inquiries and reservations.  
 - **Customization:**  
@@ -140,7 +140,7 @@ The website will serve as the digital gateway for ADVENTURE ECOSIUM’s team-bui
   - **Hero Section:**  
     Full-screen video/slider with dynamic imagery, overlaid with a captivating headline (e.g., “Embark on Your Team Adventure”) and clear call-to-action (CTA) buttons.
   - **Overview & Value Proposition:**  
-    Brief description of ADVENTURE ECOSIUM’s mission, core activities, and benefits.
+    Brief description of ECOSIUM EVENT’s mission, core activities, and benefits.
   - **Interactive Map/Timeline:**  
     Visual representation of the journey through different programme activities.
   - **Testimonials & Impact Stories:**  
@@ -148,7 +148,7 @@ The website will serve as the digital gateway for ADVENTURE ECOSIUM’s team-bui
 
 - **About Us:**  
   - **Our Story:**  
-    Narrative on the inception, ethos, and vision behind ADVENTURE ECOSIUM.
+    Narrative on the inception, ethos, and vision behind ECOSIUM EVENT.
   - **Team Profiles:**  
     Bios and images of facilitators and leadership, presented in a clean, professional layout.
 
@@ -313,33 +313,10 @@ The website will serve as the digital gateway for ADVENTURE ECOSIUM’s team-bui
 
 ## 12. Final Note
 
-This specification sheet provides a comprehensive overview for building the ADVENTURE ECOSIUM website. By following these guidelines, the project will deliver a highly interactive, mobile-responsive, and user-friendly digital platform that drives user engagement and supports the growth of ADVENTURE ECOSIUM’s team-building initiatives.
+This specification sheet provides a comprehensive overview for building the ECOSIUM EVENT website. By following these guidelines, the project will deliver a highly interactive, mobile-responsive, and user-friendly digital platform that drives user engagement and supports the growth of ECOSIUM EVENT’s team-building initiatives.
 
 For further details or to commence development, please proceed to set up an initial meeting via platforms such as [Zoom](https://zoom.us) or [Google Meet](https://meet.google.com).
 
 --- 
 
-This specification sheet is intended as a roadmap for the development team and stakeholders to ensure all aspects of the project are aligned, resulting in a successful launch and a robust digital presence for ADVENTURE ECOSIUM. 
-
-## File Structure:
-```
-├── src/
-│   ├── assets/
-│   │   ├── images/
-│   │   ├── videos/
-│   │   └── fonts/
-│   ├── styles/
-│   │   ├── main.scss
-│   │   └── custom.scss
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── animations.js
-│   │   └── booking.js
-│   └── pages/
-│       ├── index.html
-│       ├── about.html
-│       ├── programmes.html
-│       ├── booking.html
-│       └── blog.html
-└── package.json
-```
+This specification sheet is intended as a roadmap for the development team and stakeholders to ensure all aspects of the project are aligned, resulting in a successful launch and a robust digital presence for ECOSIUM EVENT. 
