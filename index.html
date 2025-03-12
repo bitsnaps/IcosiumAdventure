@@ -670,29 +670,29 @@
                 </div>
               </div>
               
-              <div class="field">
+                            <div class="field">
                 <label class="label">Services</label>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceFormation" value="2000">
+                    <input type="checkbox" class="service-checkbox" value="2000">
                     Formation (<span class="enterprise-price">+2000</span><span class="student-price" style="display:none">+1600</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceCoaching" value="3500">
+                    <input type="checkbox" class="service-checkbox" value="3500">
                     Coaching (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+2800</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceTeamBuilding" value="3500" checked>
+                    <input type="checkbox" class="service-checkbox" value="3500" checked>
                     Team Building (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+2800</span> DA/pers)
                   </label>
                 </div>
                 <div class="control">
                   <label class="checkbox">
-                    <input type="checkbox" id="serviceBrainstorming" value="1800">
+                    <input type="checkbox" class="service-checkbox" value="1800">
                     Brainstorming (<span class="enterprise-price">+1800</span><span class="student-price" style="display:none">+1400</span> DA/pers)
                   </label>
                 </div>
@@ -1245,21 +1245,14 @@
         });
         document.getElementById('taxNotice').style.display = isStudent ? 'none' : 'block';
         
-        // Add service prices
-        if (document.getElementById('serviceFormation').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceFormation').value) * discount;
-        }
-        if (document.getElementById('serviceCoaching').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceCoaching').value) * discount;
-        }
-        if (document.getElementById('serviceTeamBuilding').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceTeamBuilding').value) * discount;
-        }
-        if (document.getElementById('serviceBrainstorming').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceBrainstorming').value) * discount;
-        }
+        // Add service prices using class selector
+        document.querySelectorAll('.service-checkbox').forEach(checkbox => {
+          if (checkbox.checked) {
+            pricePerPerson += parseInt(checkbox.value) * discount;
+          }
+        });
         
-        // Add workshop prices using class selector
+        // Add workshop prices
         document.querySelectorAll('.workshop-checkbox').forEach(checkbox => {
           if (checkbox.checked) {
             pricePerPerson += parseInt(checkbox.value) * discount;
@@ -1276,22 +1269,25 @@
         document.getElementById('totalParticipants').textContent = participantCount;
         document.getElementById('grandTotal').textContent = Math.round(pricePerPerson * participantCount);
       };
-
+      
       // Add event listeners for price calculation
       document.getElementById('calculateBtn').addEventListener('click', calculatePrice);
       document.getElementById('clientEnterprise').addEventListener('change', calculatePrice);
       document.getElementById('clientStudent').addEventListener('change', calculatePrice);
       document.getElementById('participantCount').addEventListener('change', calculatePrice);
       
-      // Add listeners to service checkboxes
-      document.querySelectorAll('#serviceFormation, #serviceCoaching, #serviceTeamBuilding, #serviceBrainstorming, #serviceRestaurant').forEach(checkbox => {
+      // Add listeners to all service checkboxes using class selector
+      document.querySelectorAll('.service-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', calculatePrice);
       });
       
-      // Add listeners to all workshop checkboxes using class selector
+      // Add listeners to all workshop checkboxes
       document.querySelectorAll('.workshop-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', calculatePrice);
       });
+      
+      // Add listener to restaurant service checkbox
+      document.getElementById('serviceRestaurant').addEventListener('change', calculatePrice);
       
       // Initial calculation
       calculatePrice();
