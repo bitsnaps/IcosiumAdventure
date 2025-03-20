@@ -105,7 +105,7 @@
     }
     
     .parallax {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/Images/02.jpeg');
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
@@ -206,15 +206,24 @@
               Partez au-delà de l'ordinaire, créez des équipes qui réussissent.
             </h2>
             <div class="buttons are-medium">
-              <a href="#services" class="button is-success is-rounded">
-                <span>Découvrir nos ateliers</span>
-                <span class="icon">
-                  <i class="fas fa-arrow-right"></i>
+              <a href="tel:+2130666655386" class="button is-success is-rounded">
+                <span>
+                  <i class="fas fa-phone"></i>
+                  Appeler
                 </span>
               </a>
-              <a href="#contact" class="button is-light is-outlined is-rounded">
+              <a href="#pricing" class="button is-light is-outlined is-rounded">
                 <span>Demander un devis</span>
               </a>
+
+              <a href="#services" class="button is-light is-outlined is-rounded">
+                <span>Découvrir nos ateliers</span>
+              </a>
+
+              <a href="#activities" class="button is-light is-outlined is-rounded">
+                <span>Découvrir toutes nos activités</span>
+              </a>
+
             </div>
           </div>
         </div>
@@ -298,9 +307,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -318,9 +327,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -338,9 +347,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -358,9 +367,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -378,9 +387,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -398,9 +407,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -418,9 +427,9 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
           </div>
         </div>
         
@@ -438,9 +447,29 @@
                 </p>
               </div>
             </div>
-            <footer class="card-footer">
+            <!-- <footer class="card-footer">
               <a class="card-footer-item has-text-success">En savoir plus</a>
-            </footer>
+            </footer> -->
+          </div>
+        </div>
+
+        <!-- Workshop 9 -->
+        <div class="column is-4">
+          <div class="card workshop-card service-card">
+            <div class="card-content">
+              <div class="has-text-centered">
+                <span class="icon service-icon has-text-success">
+                  <i class="fas fa-user-graduate"></i>
+                </span>
+                <h3 class="title is-4">Stratégie d'étudiant<h3>
+                <p class="subtitle is-6">
+                  Prenez le contrôle de votre parcours d'apprentissage. Cet atelier vous aidera à identifier la stratégie optimale pour atteindre vos objectifs académiques.
+                </p>
+              </div>
+            </div>
+            <!-- <footer class="card-footer">
+              <a class="card-footer-item has-text-success">En savoir plus</a>
+            </footer> -->
           </div>
         </div>
       </div>
@@ -522,14 +551,14 @@
         
       </div>
       
-      <div class="has-text-centered mt-6">
+      <!-- <div class="has-text-centered mt-6">
         <a class="button is-success is-medium is-rounded">
           <span>Découvrir toutes nos activités</span>
           <span class="icon">
             <i class="fas fa-arrow-right"></i>
           </span>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -767,9 +796,14 @@
               </div>
               
               <div class="field">
+                <label class="label">Restauration</label>
                 <label class="checkbox">
-                  <input type="checkbox" id="serviceRestaurant" value="1200">
-                  Service de restauration (+1200 DA/pers)
+                  <input type="checkbox" class="service-checkbox" value="1800">
+                  Déjeuner (+1800 DA/pers)
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" class="service-checkbox" value="1000">
+                  Pause café (+1000 DA/pers)
                 </label>
               </div>
               
@@ -813,25 +847,6 @@
               <a class="card-footer-item button is-warning is-fullwidth">
                 Demander un devis
               </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="has-text-centered mt-6">
-        <p class="is-size-5 mb-4">Services complémentaires</p>
-        <div class="columns is-centered">
-          <div class="column is-8">
-            <div class="box has-background-success">
-              <div class="columns is-vcentered">
-                <div class="column">
-                  <h4 class="title is-5">Service de restauration</h4>
-                  <p>Déjeuner complet + pause café avec gâteaux et boissons</p>
-                </div>
-                <div class="column is-narrow">
-                  <p class="title is-4 has-text-white">1800 DA / personne</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -897,11 +912,11 @@
         </div>
       </div>
       
-      <div class="has-text-centered mt-6">
+      <!-- <div class="has-text-centered mt-6">
         <a class="button is-white is-outlined is-medium is-rounded">
           <span>Voir plus de témoignages</span>
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -947,7 +962,7 @@
               <span class="icon has-text-success">
                 <i class="fas fa-phone"></i>
               </span>
-              <a href="tel:+2130770395411" class="has-text-inherit">+213 (0) 770.39.54.11</a>
+              Tél: <a href="tel:+2130666655386" class="has-text-inherit">+213 (0)6.66.65.53.86 (Whatsapp)</a>
             </p>
             <p>
               <span class="icon has-text-success">
@@ -965,7 +980,7 @@
               <span class="icon has-text-success">
                 <i class="fas fa-map-marker-alt"></i>
               </span>
-              Adresse d'acitivté: Ferme ECOSIUM EVENT, Tipaza
+              Adresse d'acitivté: Ferme ECOSIUM, Tipaza
             </p>
             
             <div class="mt-5">
@@ -1157,7 +1172,7 @@
             <span class="icon has-text-success">
               <i class="fas fa-phone"></i>
             </span>
-            <a href="tel:+2130770395411" class="has-text-inherit">+213 (0) 770.39.54.11</a>
+            Tél: <a href="tel:+2130666655386" class="has-text-inherit">+213 (0)6.66.65.53.86 (Whatsapp)</a>
           </p>
           <p class="has-text-grey-light">
             <span class="icon has-text-success">
@@ -1175,7 +1190,7 @@
             <span class="icon has-text-success">
               <i class="fas fa-map-marker-alt"></i>
             </span>
-            Adresse d'acitivté: Ferme ECOSIUM EVENT, Tipaza
+            Adresse d'acitivté: Ferme ECOSIUM, Tipaza
           </p>
         </div>
       </div>
@@ -1278,11 +1293,6 @@
           }
         });
         
-        // Add restaurant service if selected
-        if (document.getElementById('serviceRestaurant').checked) {
-          pricePerPerson += parseInt(document.getElementById('serviceRestaurant').value) * discount;
-        }
-        
         // Update the displayed prices
         document.getElementById('totalPrice').textContent = Math.round(pricePerPerson);
         document.getElementById('totalParticipants').textContent = participantCount;
@@ -1304,9 +1314,6 @@
       document.querySelectorAll('.workshop-checkbox').forEach(checkbox => {
         checkbox.addEventListener('change', calculatePrice);
       });
-      
-      // Add listener to restaurant service checkbox
-      document.getElementById('serviceRestaurant').addEventListener('change', calculatePrice);
       
       // Initial calculation
       calculatePrice();
