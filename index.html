@@ -151,6 +151,26 @@
     .has-text-inherit:hover {
       color: #04AA6D;
     }
+
+    #go-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      z-index: 99;
+      /* Make button more visible and touch-friendly on mobile */
+      opacity: 0.8;
+    }
+    
+    /* Ensure button is visible on all screen sizes */
+    @media screen and (max-width: 768px) {
+      #go-to-top {
+        bottom: 15px;
+        right: 15px;
+        /* Slightly larger on mobile for better touch targets */
+        padding: 0.5em 0.7em;
+      }
+    }
   </style>
 </head>
 <body>
@@ -967,7 +987,7 @@
           <div class="column">
             <div class="buttons is-centered">
               <a href="#pricing" class="button is-white is-medium is-rounded">
-                <span>Demander un devis personnalisé</span>
+                <span>Demander un devis</span>
                 <span class="icon">
                   <i class="fas fa-arrow-right"></i>
                 </span>
@@ -1353,7 +1373,37 @@
       
       // Initial calculation
       calculatePrice();
+
+      // Go to top functionality
+      const goToTopButton = document.getElementById('go-to-top');
+
+      // Show button when user scrolls down 300px from the top
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          goToTopButton.style.display = 'block';
+        } else {
+          goToTopButton.style.display = 'none';
+        }
+      });
+      
+      // Smooth scroll to top when button is clicked
+      goToTopButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
     });
   </script>
+
+  <!-- Go to top button -->
+  <a id="go-to-top" class="button is-success is-rounded">
+    <span class="icon">
+      <i class="fas fa-arrow-up"></i>
+    </span>
+  </a>
+
 </body>
 </html>
