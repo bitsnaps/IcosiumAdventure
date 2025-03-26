@@ -180,6 +180,7 @@
       right: 20px;
       display: none;
       z-index: 99;
+      border-radius: 50%;
       /* Make button more visible and touch-friendly on mobile */
       opacity: 0.8;
     }
@@ -193,8 +194,6 @@
       #go-to-top {
         bottom: 15px;
         right: 15px;
-        /* Slightly larger on mobile for better touch targets */
-        padding: 0.5em 0.7em;
       }
     }
   </style>
@@ -717,6 +716,9 @@
                 <div class="control">
                   <input class="input" type="number" id="participantCount" min="10" value="10">
                 </div>
+                <p id="packSuggestion" class="help is-info has-text-weight-bold" style="display: none;">
+                  Pour ce nombre de participants, découvrez nos packs avantageux!
+                </p>
               </div>
               
               <div class="field">
@@ -849,6 +851,7 @@
           </div>
         </div>
         
+        <!-- Normal Pack -->
         <div class="column is-4">
           <div class="card service-card">
             <div class="card-header has-bg-green">
@@ -857,7 +860,7 @@
               </p>
             </div>
             <div class="card-content has-text-centered">
-              <p class="title is-1">5000 DA</p>
+              <p class="title is-1"><span id="normalPackPrice">6500</span> DA</p>
               <p class="subtitle">Par personne</p>
               <p class="is-size-7 mb-4">Prix hors taxes (HT)</p>
               <div class="content">
@@ -878,6 +881,7 @@
           </div>
         </div>
         
+        <!-- VIP Pack -->
         <div class="column is-4">
           <div class="card service-card">
             <div class="card-header is-orange-light">
@@ -886,7 +890,7 @@
               </p>
             </div>
             <div class="card-content has-text-centered">
-              <p class="title is-1">10000 DA</p>
+              <p class="title is-1"><span id="vipPackPrice">7000</span> DA</p>
               <p class="subtitle">Par personne</p>
               <p class="is-size-7 mb-4">Prix hors taxes (HT)</p>
               <div class="content">
@@ -906,10 +910,10 @@
               </a>
             </div>
           </div>
-        </div>        
+        </div>       
       </div>
 
-        <div class="has-text-centered mt-6">
+      <div class="has-text-centered mt-6">
         <p class="is-size-5 mb-4">Service de Location</p>
         <div class="columns is-centered">
           <div class="column is-8">
@@ -1374,6 +1378,9 @@
       const grandTotalElement = document.getElementById('grandTotal');
       const enterprisePrices = document.querySelectorAll('.enterprise-price');
       const studentPrices = document.querySelectorAll('.student-price');
+      const packSuggestion = document.getElementById('packSuggestion');
+      const normalPackPriceElement = document.getElementById('normalPackPrice');
+      const vipPackPriceElement = document.getElementById('vipPackPrice');
       
       // Calculate price function
       function calculatePrice() {
@@ -1410,8 +1417,34 @@
         totalPriceElement.textContent = Math.round(basePrice);
         totalParticipantsElement.textContent = participants;
         grandTotalElement.textContent = Math.round(basePrice * participants);
+        
+        // Update pack prices (30% and 40% more than base price)
+        const normalPackPrice = Math.round(basePrice * 1.3);
+        const vipPackPrice = Math.round(basePrice * 1.4);
+        
+        normalPackPriceElement.textContent = normalPackPrice;
+        vipPackPriceElement.textContent = vipPackPrice;
+        
+        // Show pack suggestion for 10 participants or less
+        if (participants <= 10) {
+          packSuggestion.style.display = 'block';
+          packSuggestion.textContent = 'Pour moins de ' + participants + ', découvrez nos Packs avantageux!';
+        } else {
+          packSuggestion.style.display = 'none';
+        }
+
+        /*/ Show pack suggestion based on participant count
+        if (participants <= 7 && participants >= 5) {
+          packSuggestion.style.display = 'block';
+          packSuggestion.textContent = 'Pour ' + participants + ' participants, découvrez notre Pack VIP avantageux!';
+        } else if (participants >= 7) {
+          packSuggestion.style.display = 'block';
+          packSuggestion.textContent = 'Pour ' + participants + ' participants, découvrez notre Pack Normal avantageux!';
+        } else {
+          packSuggestion.style.display = 'none';
+        }*/
       }
-      
+
       // Toggle price display based on client type
       function togglePriceDisplay() {
         if (clientStudentRadio.checked) {
@@ -1444,8 +1477,8 @@
       // Add event listeners for price calculation
       clientEnterpriseRadio.addEventListener('change', calculatePrice);
       clientStudentRadio.addEventListener('change', calculatePrice);
+      participantCountInput.addEventListener('change', calculatePrice);
       document.getElementById('calculateBtn').addEventListener('click', calculatePrice);
-      document.getElementById('participantCount').addEventListener('change', calculatePrice);
       
       // Add listeners to all service checkboxes using class selector
       document.querySelectorAll('.service-checkbox').forEach(checkbox => {
@@ -1485,7 +1518,7 @@
   </script>
 
   <!-- Go to top button -->
-  <a id="go-to-top" class="button is-success is-rounded">
+  <a id="go-to-top" class="button is-success">
     <span class="icon">
       <i class="fas fa-arrow-up"></i>
     </span>
