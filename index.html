@@ -707,7 +707,7 @@
       <div class="columns is-variable is-8">
 
         <!-- Price Calculator -->
-        <div class="column is-4">
+        <div class="column is-6 is-offset-3">
           <div class="card service-card">
             <div class="card-header is-brown">
               <p class="card-header-title is-centered has-text-white">
@@ -720,8 +720,8 @@
                 <div class="control">
                   <input class="input" type="number" id="participantCount" min="5" value="10">
                 </div>
-                <p id="packSuggestion" class="help is-info has-text-weight-bold" style="display: none;">
-                  Pour ce nombre de participants, découvrez nos packs avantageux!
+                <p id="participantNotice" class="help is-info has-text-weight-bold" style="display: none;">
+                  Pour moins de 10 participants, contactez-nous pour une offre personnalisée.
                 </p>
               </div>
               
@@ -830,14 +830,18 @@
               
               <div class="field">
                 <label class="label">Restauration</label>
-                <label class="checkbox">
-                  <input type="checkbox" class="service-checkbox" value="1800">
-                  Déjeuner (+1800 DA/pers)
-                </label>
-                <label class="checkbox">
-                  <input type="checkbox" class="service-checkbox" value="1000">
-                  Pause café (+1000 DA/pers)
-                </label>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" class="service-checkbox" value="1800">
+                    Déjeuner (+1800 DA/pers)
+                  </label>
+              </div>
+                <div class="control">
+                  <label class="checkbox">
+                    <input type="checkbox" class="service-checkbox" value="1000">
+                    Pause café (+1000 DA/pers)
+                  </label>
+                </div>
               </div>
               
               <div class="notification is-success mt-4">
@@ -856,71 +860,6 @@
           </div>
         </div>
         
-        <!-- Normal Pack -->
-        <div class="column is-4">
-          <div class="card service-card">
-            <div class="card-header has-bg-green">
-              <p class="card-header-title is-centered">
-                Pack Normal
-              </p>
-            </div>
-            <div class="card-content has-text-centered">
-              <p class="title is-1"><span id="normalPackPrice">6500</span> DA</p>
-              <p class="subtitle">Par personne</p>
-              <p class="is-size-7 mb-4">Prix hors taxes (HT)</p>
-              <div class="content">
-                <ul class="has-text-left">
-                  <li>7-9 personnes</li>
-                  <li>Formation, Coaching ou Business Talk</li>
-                  <li>Randonnée exploratoire</li>
-                  <li>Défis d'équipe</li>
-                  <li>Méditation en plein air</li>
-                  <li>Accès aux installations</li>
-                </ul>
-                <p class="has-text-danger is-size-7">*Team Building disponible à partir de 10 personnes</p>
-              </div>
-            </div>
-            <div class="card-footer">
-              <a class="card-footer-item button is-success is-light is-fullwidth">
-                Demander un devis
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- VIP Pack -->
-        <div class="column is-4">
-          <div class="card service-card">
-            <div class="card-header is-orange-light">
-              <p class="card-header-title is-centered">
-                Pack VIP
-              </p>
-            </div>
-            <div class="card-content has-text-centered">
-              <p class="title is-1"><span id="vipPackPrice">7000</span> DA</p>
-              <p class="subtitle">Par personne</p>
-              <p class="is-size-7 mb-4">Prix hors taxes (HT)</p>
-              <div class="content">
-                <ul class="has-text-left">
-                  <li>5-9 personnes</li>
-                  <li>Formation, Coaching ou Business Talk</li>
-                  <li>Randonnée exploratoire</li>
-                  <li>Défis d'équipe</li>
-                  <li>Méditation en plein air</li>
-                  <li>Accès aux installations</li>
-                  <li>Restauration incluse</li>
-                </ul>
-                <p class="has-text-danger is-size-7">*Team Building disponible à partir de 10 personnes</p>
-              </div>
-            </div>
-            <div class="card-footer">
-              <a class="card-footer-item button is-warning is-fullwidth">
-                Demander un devis
-              </a>
-            </div>
-          </div>
-        </div>
-
       </div>
 
       <!-- Hosting Service -->
@@ -1377,26 +1316,22 @@
       });
       
 
-      // Elements
-      const participantCountInput = document.getElementById('participantCount');
-      const clientEnterpriseRadio = document.getElementById('clientEnterprise');
-      const clientStudentRadio = document.getElementById('clientStudent');
-      const serviceRadios = document.querySelectorAll('.service-radio');
-      const workshopRadios = document.querySelectorAll('.workshop-radio');
-      const restaurationCheckboxes = document.querySelectorAll('.service-checkbox');
-      const totalPriceElement = document.getElementById('totalPrice');
-      const totalParticipantsElement = document.getElementById('totalParticipants');
-      const grandTotalElement = document.getElementById('grandTotal');
-      const enterprisePrices = document.querySelectorAll('.enterprise-price');
-      const studentPrices = document.querySelectorAll('.student-price');
-      const packSuggestion = document.getElementById('packSuggestion');
-      const normalPackPriceElement = document.getElementById('normalPackPrice');
-      const vipPackPriceElement = document.getElementById('vipPackPrice');
+    const participantCountInput = document.getElementById('participantCount');
+    const clientEnterpriseRadio = document.getElementById('clientEnterprise');
+    const clientStudentRadio = document.getElementById('clientStudent');
+    const serviceRadios = document.querySelectorAll('.service-radio');
+    const workshopRadios = document.querySelectorAll('.workshop-radio');
+    const restaurationCheckboxes = document.querySelectorAll('.service-checkbox');
+    const totalPriceElement = document.getElementById('totalPrice');
+    const totalParticipantsElement = document.getElementById('totalParticipants');
+    const grandTotalElement = document.getElementById('grandTotal');
+    const enterprisePrices = document.querySelectorAll('.enterprise-price');
+    const studentPrices = document.querySelectorAll('.student-price');
+    const participantNotice = document.getElementById('participantNotice');
       
     // Team Building radio button (for restriction)
     const teamBuildingRadio = document.querySelector('input[name="serviceType"][value="3500"]');
-
-      // Calculate price function
+    // Calculate price function
     function calculatePrice() {
       let basePrice = 0;
       const participants = parseInt(participantCountInput.value);
@@ -1441,67 +1376,48 @@
       totalParticipantsElement.textContent = participants;
       grandTotalElement.textContent = Math.round(basePrice * participants);
       
-      // Update pack prices (30% and 40% more than base price)
-      const normalPackPrice = Math.round(basePrice * 1.3);
-      const vipPackPrice = Math.round(basePrice * 1.4);
-      
-      normalPackPriceElement.textContent = normalPackPrice;
-      vipPackPriceElement.textContent = vipPackPrice;
-      
-      // Show pack suggestion based on participant count
-      if (participants >= 5 && participants < 7) {
-        packSuggestion.style.display = 'block';
-        packSuggestion.textContent = 'Pour ' + participants + ' participants, découvrez notre Pack VIP avantageux!';
-        packSuggestion.classList.add('is-warning');
-        packSuggestion.classList.remove('is-info', 'is-success');
-      } else if (participants >= 7 && participants < 10) {
-        packSuggestion.style.display = 'block';
-        packSuggestion.textContent = 'Pour ' + participants + ' participants, découvrez notre Pack Normal avantageux!';
-        packSuggestion.classList.add('is-success');
-        packSuggestion.classList.remove('is-info', 'is-warning');
-      } else {
-        packSuggestion.style.display = 'none';
-      }
-      
-      // Disable Team Building option for packs with less than 10 participants
+      // Show participant notice for less than 10 participants
       if (participants < 10) {
+        participantNotice.style.display = 'block';
         teamBuildingRadio.disabled = true;
         teamBuildingRadio.parentElement.classList.add('has-text-grey-light');
       } else {
+        participantNotice.style.display = 'none';
         teamBuildingRadio.disabled = false;
         teamBuildingRadio.parentElement.classList.remove('has-text-grey-light');
       }
     }
+        
+    // Event listeners
+    participantCountInput.addEventListener('input', calculatePrice);
+    clientEnterpriseRadio.addEventListener('change', togglePriceDisplay);
+    clientStudentRadio.addEventListener('change', togglePriceDisplay);
+    
+    serviceRadios.forEach(radio => {
+      radio.addEventListener('change', calculatePrice);
+    });
+    
+    workshopRadios.forEach(radio => {
+      radio.addEventListener('change', calculatePrice);
+    });
+    
+    restaurationCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', calculatePrice);
+    });
+      
 
-      // Toggle price display based on client type
-      function togglePriceDisplay() {
-        if (clientStudentRadio.checked) {
-          enterprisePrices.forEach(el => el.style.display = 'none');
-          studentPrices.forEach(el => el.style.display = 'inline');
-        } else {
-          enterprisePrices.forEach(el => el.style.display = 'inline');
-          studentPrices.forEach(el => el.style.display = 'none');
-        }
-        calculatePrice();
+    // Toggle price display based on client type
+    function togglePriceDisplay() {
+      if (clientStudentRadio.checked) {
+        enterprisePrices.forEach(el => el.style.display = 'none');
+        studentPrices.forEach(el => el.style.display = 'inline');
+      } else {
+        enterprisePrices.forEach(el => el.style.display = 'inline');
+        studentPrices.forEach(el => el.style.display = 'none');
       }
-      
-      // Event listeners
-      participantCountInput.addEventListener('input', calculatePrice);
-      clientEnterpriseRadio.addEventListener('change', togglePriceDisplay);
-      clientStudentRadio.addEventListener('change', togglePriceDisplay);
-      
-      serviceRadios.forEach(radio => {
-        radio.addEventListener('change', calculatePrice);
-      });
-      
-      workshopRadios.forEach(radio => {
-        radio.addEventListener('change', calculatePrice);
-      });
-      
-      restaurationCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', calculatePrice);
-      });
-      
+      calculatePrice();
+    }
+
       // Add event listeners for price calculation
       clientEnterpriseRadio.addEventListener('change', calculatePrice);
       clientStudentRadio.addEventListener('change', calculatePrice);
