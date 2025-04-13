@@ -49,13 +49,13 @@
                 </span>
                 <span>English</span>
               </a>
-              <a class="navbar-item" href="/fr">
+              <a class="navbar-item" href="/fr/">
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/fr.svg" width="24" height="18" alt="Français">
                 </span>
                 <span>Français</span>
               </a>
-              <!-- <a class="navbar-item" href="/ar">
+              <!-- <a class="navbar-item" href="/ar/">
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/dz.svg" width="24" height="18" alt="العربية">
                 </span>
@@ -1026,48 +1026,57 @@
         <div class="column is-7">
           <div class="box">
             <h3 class="title is-4">Send us a message</h3>
-            <form>
+            <form id="contactForm" method="POST" action="/contact">
               <div class="field">
                 <label class="label">Name</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Your name">
+                  <input class="input" type="text" id="name" placeholder="Your name">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="Your email" required>
+                  <input class="input" type="email" id="email" placeholder="Your email" required>
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Phone</label>
                 <div class="control">
-                  <input class="input" type="tel" placeholder="Your phone number">
+                  <input class="input" type="tel" id="tel" placeholder="Your phone number">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Company</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Your company name">
+                  <input class="input" type="text" id="company" placeholder="Your company name">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Your message"></textarea>
+                  <textarea class="textarea" id="message" placeholder="Your message"></textarea>
                 </div>
               </div>
-              
+            
+              <div style="display: none;">
+                <label for="timestamp">Date/Time:</label>
+                <input type="text" id="timestamp" name="timestamp" tabindex="-1" autocomplete="off">
+              </div>
+              <input type="hidden" id="form_timestamp" name="form_timestamp">
+
               <div class="field">
                 <div class="control">
-                  <button class="button is-success is-medium is-fullwidth">Send</button>
+                  <input type="submit" class="button is-success is-medium is-fullwidth" value="Send" />
                 </div>
               </div>
+
+
             </form>
+            <div id="statusMessage" style="display: none;"></div>
           </div>
         </div>
       </div>

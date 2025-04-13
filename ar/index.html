@@ -59,13 +59,13 @@
                 </span>
                 <span>English</span>
               </a>
-              <a class="navbar-item" href="/fr"> <!-- Link to French version -->
+              <a class="navbar-item" href="/fr/"> <!-- Link to French version -->
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/fr.svg" width="24" height="18" alt="Français">
                 </span>
                 <span>Français</span>
               </a>
-              <a class="navbar-item" href="/ar">
+              <a class="navbar-item" href="/ar/">
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/dz.svg" width="24" height="18" alt="العربية">
                 </span>
@@ -1036,48 +1036,56 @@
         <div class="column is-7">
           <div class="box">
             <h3 class="title is-4">أرسلوا لنا رسالة</h3>
-            <form>
+            <form id="contactForm" method="POST" action="/contact">
               <div class="field">
                 <label class="label">الاسم</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="اسمك">
+                  <input class="input" type="text" id="name" name="name" placeholder="اسمك">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">البريد الإلكتروني</label>
                 <div class="control">
-                  <input class="input" type="email" required placeholder="بريدك الإلكتروني" required>
+                  <input class="input" type="email" id="email" name="email" required placeholder="بريدك الإلكتروني" required>
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">الهاتف</label>
                 <div class="control">
-                  <input class="input" type="tel" placeholder="رقم هاتفك">
+                  <input class="input" type="tel" id="tel" name="tel" placeholder="رقم هاتفك">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">الشركة</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="اسم شركتك">
+                  <input class="input" type="text" id="company" name="company" placeholder="اسم شركتك">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">الرسالة</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="رسالتك"></textarea>
+                  <textarea class="textarea" id="message" name="message" placeholder="رسالتك"></textarea>
                 </div>
               </div>
               
+              <div style="display: none;">
+                <label for="timestamp">Date/Time:</label>
+                <input type="text" id="timestamp" name="timestamp" tabindex="-1" autocomplete="off">
+              </div>
+              <input type="hidden" id="form_timestamp" name="form_timestamp">
+              <input type="hidden" id="csrf_token" name="csrf_token">
+
               <div class="field">
                 <div class="control">
-                  <button class="button is-success is-medium is-fullwidth">إرسال</button>
+                  <input type="submit" id="submitButton" class="button is-success is-medium is-fullwidth" value="إرسال" />
                 </div>
               </div>
             </form>
+            <div id="statusMessage" style="display: none;"></div>
           </div>
         </div>
       </div>
