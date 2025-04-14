@@ -1030,44 +1030,52 @@
               <div class="field">
                 <label class="label">Nom</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Votre nom">
+                  <input class="input" id="name" name="name" type="text" placeholder="Votre nom" required>
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="Votre email" required>
+                  <input class="input" type="email" id="email" name="email" placeholder="Votre email" required>
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Téléphone</label>
                 <div class="control">
-                  <input class="input" type="tel" placeholder="Votre numéro de téléphone">
+                  <input class="input" type="tel" id="tel" name="tel" placeholder="Votre numéro de téléphone">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Entreprise</label>
                 <div class="control">
-                  <input class="input" type="text" placeholder="Nom de votre entreprise">
+                  <input class="input" type="text" id="company" name="company" placeholder="Nom de votre entreprise">
                 </div>
               </div>
               
               <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                  <textarea class="textarea" placeholder="Votre message"></textarea>
+                  <textarea class="textarea" id="message" name="message" placeholder="Votre message" required></textarea>
                 </div>
               </div>
               
+              <div style="display: none;">
+                <label for="timestamp">Date/Time:</label>
+                <input type="text" id="timestamp" name="timestamp" tabindex="-1" autocomplete="off">
+              </div>
+              <input type="hidden" id="form_timestamp" name="form_timestamp">
+              <input type="hidden" id="csrf_token" name="csrf_token">
+
               <div class="field">
                 <div class="control">
-                  <button class="button is-success is-medium is-fullwidth">Envoyer</button>
+                  <input type="submit" id="submitButton" class="button is-success is-medium is-fullwidth" value="Envoyer" />
                 </div>
               </div>
             </form>
+            <div id="statusMessage" style="display: none;"></div>
           </div>
         </div>
       </div>
