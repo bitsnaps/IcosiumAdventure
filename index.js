@@ -1,9 +1,8 @@
 const { serve } = require('@hono/node-server');
 const { Hono } = require('hono');
 const { serveStatic } = require('@hono/node-server/serve-static');
-const { readFile } = require('node:fs/promises');
-const nodemailer = require('nodemailer');
 const { rateLimiter } = require('./honoRateLimiter');
+const nodemailer = require('nodemailer');
 
 const MAX_TIMESTAMP_AGE_MS = 15 * 60 * 1000; // 15 minutes validity for timestamp/token
 
@@ -45,7 +44,6 @@ const transporter = nodemailer.createTransport({
 
 const app = new Hono();
 
-// app.use('/static/*', serveStatic({ root: './' }));
 // Anything comes from static folder will be served from "/"
 app.use('/*', serveStatic({ root: './static' }));
 
@@ -62,15 +60,6 @@ app.use(
   })
 );
 
-// app.get('/', async (c) => {
-// 	const home = await readFile('./index.html', 'utf8');	
-//     return c.html(home);
-// });
-
-// app.get('/fr', async (c) => {
-// 	const home = await readFile('./fr/index.html', 'utf8');	
-//     return c.html(home);
-// });
 
 app.get('/csrf', async (c) => {
     const ts = c.req.query('ts');
