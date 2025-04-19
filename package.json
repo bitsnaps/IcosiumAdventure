@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.6.15",
+    "nodemailer": "^6.10.1"
+  },
+  "keywords": [
+    "hono",
+    "api"
+  ],
+  "author": "Ibrahim.H",
+  "license": "MIT"
+}

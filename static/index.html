@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700&display=swap">
+  <!-- <link rel="stylesheet" href="/css/bulma.min.css">
+  <link rel="stylesheet" href="/css/fontawesome-all.min.css"> -->
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
@@ -49,13 +51,13 @@
                 </span>
                 <span>English</span>
               </a>
-              <a class="navbar-item" href="/fr/">
+              <a class="navbar-item" href="/fr">
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/fr.svg" width="24" height="18" alt="Français">
                 </span>
                 <span>Français</span>
               </a>
-              <!-- <a class="navbar-item" href="/ar/">
+              <!-- <a class="navbar-item" href="/ar">
                 <span class="icon mx-2">
                   <img src="https://flagcdn.com/dz.svg" width="24" height="18" alt="العربية">
                 </span>
@@ -597,7 +599,7 @@
                 </div>
                 <div class="control">
                   <label class="radio">
-                    <input type="radio" name="serviceType" id="team-building" class="service-radio" value="3500" checked>
+                    <input type="radio" name="serviceType" class="service-radio" id="team-building" value="3500" checked>
                     Team Building (<span class="enterprise-price">+3500</span><span class="student-price" style="display:none">+2800</span> DA/pers)
                     <span class="tag is-warning is-light ml-2">Min. 10 people</span>
                   </label>
@@ -689,7 +691,7 @@
               <div class="notification is-success mt-4">
                 <p class="title is-4">Total Price: <span id="totalPrice">2000</span> DA</p>
                 <p class="subtitle is-6">Per person</p>
-                <p class="is-size-7" id="taxNotice">Price excluding taxes</p>
+                <p class="is-size-7" id="taxNotice">(Price excluding taxes)</p>
                 <p>Total for <span id="totalParticipants">10</span> people: <span id="grandTotal">20000</span> DA (Excl. Tax)</p>
               </div>
 
@@ -963,7 +965,7 @@
               <span class="icon has-text-success">
                 <i class="fas fa-envelope"></i>
               </span>
-              contact@ecosiumevent.com
+              contact.ecosium@gmail.com
             </p>
             <p>
               <span class="icon has-text-success">
@@ -1030,7 +1032,7 @@
               <div class="field">
                 <label class="label">Name</label>
                 <div class="control">
-                  <input class="input" type="text" id="name" name="name" placeholder="Your name" required>
+                  <input class="input" type="text" id="name" name="name" placeholder="Your name">
                 </div>
               </div>
               
@@ -1058,7 +1060,7 @@
               <div class="field">
                 <label class="label">Message</label>
                 <div class="control">
-                  <textarea class="textarea" id="message" name="message" placeholder="Your message" required></textarea>
+                  <textarea class="textarea" id="message" name="message" placeholder="Your message"></textarea>
                 </div>
               </div>
             
@@ -1078,7 +1080,6 @@
 
             </form>
             <div id="statusMessage" style="display: none;"></div>
-          </div>
         </div>
       </div>
     </div>
@@ -1202,7 +1203,7 @@
             <span class="icon has-text-success">
               <i class="fas fa-envelope"></i>
             </span>
-            contact@ecosiumevent.com
+            contact.ecosium@gmail.com
           </p>
           <p class="has-text-grey-light">
             <span class="icon has-text-success">
